@@ -1,0 +1,72 @@
+{
+ "F101": {
+  "user_id": "F101",
+  "name": "Dr. Arjun Mehta",
+  "designation": "Associate Professor",
+  "area": "Finance",
+  "role": "faculty"
+ },
+ "F102": {
+  "user_id": "F102",
+  "name": "Dr. Kavita Rao",
+  "designation": "Assistant Professor",
+  "area": "Marketing",
+  "role": "faculty"
+ },
+ "F103": {
+  "user_id": "F103",
+  "name": "Prof. Sanjay Iyer",
+  "designation": "Professor",
+  "area": "Operations",
+  "role": "faculty"
+ },
+ "F104": {
+  "user_id": "F104",
+  "name": "Dr. Neha Verma",
+  "designation": "Associate Professor",
+  "area": "IT & Analytics",
+  "role": "faculty"
+ },
+ "F105": {
+  "user_id": "F105",
+  "name": "Dr. Imran Qureshi",
+  "designation": "Assistant Professor",
+  "area": "Economics",
+  "role": "faculty"
+ },
+ "F106": {
+  "user_id": "F106",
+  "name": "Dr. Priya Nair",
+  "designation": "Associate Professor",
+  "area": "OB & HR",
+  "role": "faculty"
+ },
+ "F107": {
+  "user_id": "F107",
+  "name": "Dr. Ananya Das",
+  "designation": "Assistant Professor",
+  "area": "Strategy",
+  "role": "faculty"
+ },
+ "F108": {
+  "user_id": "F108",
+  "name": "Prof. Rajesh Kumar",
+  "designation": "Professor",
+  "area": "Strategy",
+  "role": "faculty"
+ },
+ "F109": {
+  "user_id": "F109",
+  "name": "Dr. Vikram Singh",
+  "designation": "Assistant Professor",
+  "area": "Finance",
+  "role": "faculty"
+ },
+ "A001": {
+  "user_id": "A001",
+  "name": "Mr. Rohit Sinha",
+  "designation": "Accounts Officer",
+  "area": "Accounts",
+  "role": "accounts_officer"
+ }
+}

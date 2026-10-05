@@ -1,0 +1,83 @@
+{
+ "test": {
+  "id": "T29",
+  "category": "Knowledge",
+  "failure_ref": "F2",
+  "user": "F104",
+  "message": "Is airport lounge access reimbursable?",
+  "expected": "NOT_FOUND",
+  "got": "NOT_FOUND",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": null,
+  "grounded": "",
+  "latency_ms": 3.4,
+  "tool_calls": 2,
+  "in_tok": 0,
+  "out_tok": 0,
+  "cost_inr": 0.0,
+  "events": "OOV_TERMS:airport,lounge,access;VERSION_FILTER:3 superseded sections excluded",
+  "answer": "I couldn't find this in the TA/DA rules, the seed-grant guidelines or the claims SOP. I won't guess on money matters, so I've logged your question for the Accounts Section to answer.",
+  "run_id": "c5318ff4"
+ },
+ "trace": {
+  "run_id": "c5318ff4",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F104",
+  "role": "faculty",
+  "input": "Is airport lounge access reimbursable?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "Is airport lounge access reimbursable?"
+    },
+    "out": "[{\"doc_id\": \"KB-01\", \"section\": \"\\u00a73.4\", \"heading\": \"Local conveyance\", \"text\": \"Local conveyance (taxi, auto, metro) at the place of visit is reimbursed on actuals up to \\u20b9800 per day, supported by receipts.\", \"topic\": null, \"access\": \"faculty\", \"title\": \"TA/DA Rules for Faculty (Handbook)\""
+   },
+   {
+    "kind": "tool",
+    "name": "escalate",
+    "args": {
+     "claim_id": "N/A",
+     "reason": "unanswered policy question"
+    },
+    "out": "escalated to Accounts helpdesk"
+   }
+  ],
+  "events": [
+   "OOV_TERMS:airport,lounge,access",
+   "VERSION_FILTER:3 superseded sections excluded"
+  ],
+  "retrieved": [
+   "KB-01 \u00a73.4",
+   "KB-01 \u00a73.1",
+   "KB-01 \u00a74",
+   "KB-02 \u00a72"
+  ],
+  "in_tok": 0,
+  "out_tok": 0,
+  "llm_ms": 0.0,
+  "scores": [
+   0.266,
+   0.234,
+   0.224,
+   0.195
+  ],
+  "intent": "policy_q",
+  "outcome": "NOT_FOUND",
+  "answer": "I couldn't find this in the TA/DA rules, the seed-grant guidelines or the claims SOP. I won't guess on money matters, so I've logged your question for the Accounts Section to answer.",
+  "latency_ms": 3.4,
+  "tool_calls": 2,
+  "cost_inr": 0.0
+ }
+}

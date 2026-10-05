@@ -1,0 +1,65 @@
+{
+ "G-2025-01": {
+  "grant_id": "G-2025-01",
+  "pi": "F101",
+  "sanctioned": 300000,
+  "travel_cap": 120000,
+  "travel_utilised": 30000
+ },
+ "G-2025-02": {
+  "grant_id": "G-2025-02",
+  "pi": "F102",
+  "sanctioned": 300000,
+  "travel_cap": 120000,
+  "travel_utilised": 20000
+ },
+ "G-2025-03": {
+  "grant_id": "G-2025-03",
+  "pi": "F103",
+  "sanctioned": 300000,
+  "travel_cap": 120000,
+  "travel_utilised": 10000
+ },
+ "G-2025-04": {
+  "grant_id": "G-2025-04",
+  "pi": "F104",
+  "sanctioned": 300000,
+  "travel_cap": 120000,
+  "travel_utilised": 25000
+ },
+ "G-2025-05": {
+  "grant_id": "G-2025-05",
+  "pi": "F105",
+  "sanctioned": 300000,
+  "travel_cap": 120000,
+  "travel_utilised": 15000
+ },
+ "G-2025-06": {
+  "grant_id": "G-2025-06",
+  "pi": "F106",
+  "sanctioned": 300000,
+  "travel_cap": 120000,
+  "travel_utilised": 40000
+ },
+ "G-2025-07": {
+  "grant_id": "G-2025-07",
+  "pi": "F107",
+  "sanctioned": 300000,
+  "travel_cap": 120000,
+  "travel_utilised": 12000
+ },
+ "G-2025-08": {
+  "grant_id": "G-2025-08",
+  "pi": "F108",
+  "sanctioned": 300000,
+  "travel_cap": 120000,
+  "travel_utilised": 12000
+ },
+ "G-2025-09": {
+  "grant_id": "G-2025-09",
+  "pi": "F109",
+  "sanctioned": 300000,
+  "travel_cap": 120000,
+  "travel_utilised": 116000
+ }
+}

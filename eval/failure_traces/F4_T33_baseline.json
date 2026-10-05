@@ -1,0 +1,77 @@
+{
+ "test": {
+  "id": "T33",
+  "category": "Retrieval",
+  "failure_ref": "F4",
+  "user": "F102",
+  "message": "TA DA claim kab tak jama karna hai?",
+  "expected": "ANSWER",
+  "got": "ANSWER",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": true,
+  "grounded": 1.0,
+  "latency_ms": 5.2,
+  "tool_calls": 1,
+  "in_tok": 287,
+  "out_tok": 42,
+  "cost_inr": 0.00405,
+  "events": "",
+  "answer": "TA/DA claims must be submitted within 60 days of return to headquarters. [KB-01 \u00a75.1] TA/DA claims must be submitted within 30 days of return to headquarters. [KB-02 \u00a75]",
+  "run_id": "b6dbdfb2"
+ },
+ "trace": {
+  "run_id": "b6dbdfb2",
+  "ts": "2026-10-01 15:25:48",
+  "mode": "baseline",
+  "user_id": "F102",
+  "role": "faculty",
+  "input": "TA DA claim kab tak jama karna hai?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "TA DA claim kab tak jama karna hai?"
+    },
+    "out": "[{\"doc_id\": \"KB-01\", \"section\": \"\\u00a75.1\", \"heading\": \"Submission deadline\", \"text\": \"TA/DA claims must be submitted within 60 days of return to headquarters.\", \"topic\": \"deadline\", \"access\": \"faculty\", \"title\": \"TA/DA Rules for Faculty (Handbook)\", \"version\": \"1.0\", \"effective_from\": \"2024-04-01\""
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "287 in / 42 out tokens"
+   }
+  ],
+  "events": [],
+  "retrieved": [
+   "KB-01 \u00a75.1",
+   "KB-02 \u00a75",
+   "KB-04 \u00a72",
+   "KB-06 \u00a71"
+  ],
+  "in_tok": 287,
+  "out_tok": 42,
+  "llm_ms": 1.2,
+  "scores": [
+   0.575,
+   0.569,
+   0.445,
+   0.429
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "TA/DA claims must be submitted within 60 days of return to headquarters. [KB-01 \u00a75.1] TA/DA claims must be submitted within 30 days of return to headquarters. [KB-02 \u00a75]",
+  "latency_ms": 5.2,
+  "tool_calls": 1,
+  "cost_inr": 0.00405
+ }
+}

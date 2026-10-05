@@ -1,0 +1,60 @@
+{
+ "test": {
+  "id": "T68",
+  "category": "Tone",
+  "failure_ref": "F14",
+  "user": "F101",
+  "message": "This delay is making me so anxious I can't sleep. What's the status of CLM-2026-001?",
+  "expected": "HANDOFF",
+  "got": "ANSWER",
+  "outcome_ok": false,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": false,
+  "retrieval_hit": null,
+  "grounded": 0.5,
+  "latency_ms": 0.1,
+  "tool_calls": 1,
+  "in_tok": 0,
+  "out_tok": 0,
+  "cost_inr": 0.0,
+  "events": "",
+  "answer": "Claim CLM-2026-001 status: Approved (submitted 2026-08-20). The service standard is 15 working days from complete documents [KB-04 \u00a75].",
+  "run_id": "525bb09c"
+ },
+ "trace": {
+  "run_id": "525bb09c",
+  "ts": "2026-10-01 15:25:48",
+  "mode": "baseline",
+  "user_id": "F101",
+  "role": "faculty",
+  "input": "This delay is making me so anxious I can't sleep. What's the status of CLM-2026-001?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "status"
+   },
+   {
+    "kind": "tool",
+    "name": "get_claim",
+    "args": {
+     "claim_id": "CLM-2026-001"
+    },
+    "out": "{\"claim_id\": \"CLM-2026-001\", \"faculty_id\": \"F101\", \"grant_id\": \"G-2025-01\", \"purpose\": \"Paper presentation, Indian Finance Conference, Delhi\", \"city\": \"Delhi\", \"depart\": \"2026-08-10\", \"ret\": \"2026-08-13\", \"submitted\": \"2026-08-20\", \"prior_sanction\": true, \"emergency\": false, \"conference_hotel_letter"
+   }
+  ],
+  "events": [],
+  "retrieved": [],
+  "in_tok": 0,
+  "out_tok": 0,
+  "llm_ms": 0.0,
+  "intent": "status",
+  "outcome": "ANSWER",
+  "answer": "Claim CLM-2026-001 status: Approved (submitted 2026-08-20). The service standard is 15 working days from complete documents [KB-04 \u00a75].",
+  "latency_ms": 0.1,
+  "tool_calls": 1,
+  "cost_inr": 0.0
+ }
+}

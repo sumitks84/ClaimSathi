@@ -1,0 +1,79 @@
+{
+ "test": {
+  "id": "T36",
+  "category": "Retrieval",
+  "failure_ref": "F4",
+  "user": "F105",
+  "message": "What's the per diem for Mumbai?",
+  "expected": "ANSWER",
+  "got": "ANSWER",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": true,
+  "grounded": 1.0,
+  "latency_ms": 4.9,
+  "tool_calls": 1,
+  "in_tok": 396,
+  "out_tok": 21,
+  "cost_inr": 0.0043,
+  "events": "VERSION_FILTER:3 superseded sections excluded",
+  "answer": "Daily allowance is revised to \u20b91,200 per day of absence from headquarters. [KB-02 \u00a73]",
+  "run_id": "9e961658"
+ },
+ "trace": {
+  "run_id": "9e961658",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F105",
+  "role": "faculty",
+  "input": "What's the per diem for Mumbai?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "What's the per diem for Mumbai?"
+    },
+    "out": "[{\"doc_id\": \"KB-02\", \"section\": \"\\u00a73\", \"heading\": \"Revised daily allowance\", \"text\": \"Daily allowance is revised to \\u20b91,200 per day of absence from headquarters. Where the conference or host provides free meals, DA is admissible at 50%, that is \\u20b9600 per day.\", \"topic\": \"da_rate\", \"acces"
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "396 in / 21 out tokens"
+   }
+  ],
+  "events": [
+   "VERSION_FILTER:3 superseded sections excluded"
+  ],
+  "retrieved": [
+   "KB-02 \u00a73",
+   "KB-02 \u00a71",
+   "KB-02 \u00a74",
+   "KB-02 \u00a72"
+  ],
+  "in_tok": 396,
+  "out_tok": 21,
+  "llm_ms": 1.4,
+  "scores": [
+   0.604,
+   0.451,
+   0.441,
+   0.401
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "Daily allowance is revised to \u20b91,200 per day of absence from headquarters. [KB-02 \u00a73]",
+  "latency_ms": 4.9,
+  "tool_calls": 1,
+  "cost_inr": 0.0043
+ }
+}

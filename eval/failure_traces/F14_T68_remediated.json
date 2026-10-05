@@ -1,0 +1,65 @@
+{
+ "test": {
+  "id": "T68",
+  "category": "Tone",
+  "failure_ref": "F14",
+  "user": "F101",
+  "message": "This delay is making me so anxious I can't sleep. What's the status of CLM-2026-001?",
+  "expected": "HANDOFF",
+  "got": "HANDOFF",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": null,
+  "grounded": "",
+  "latency_ms": 0.2,
+  "tool_calls": 2,
+  "in_tok": 0,
+  "out_tok": 0,
+  "cost_inr": 0.0,
+  "events": "DISTRESS_DETECTED:handoff",
+  "answer": "I'm sorry this has been so stressful, and a long wait for your own money is a fair thing to be upset about. Current status of CLM-2026-001: Submitted (submitted 2026-08-20). I've asked the Assistant Registrar (Accounts) to contact you personally rather than leaving this to the portal. If the stress is affecting your sleep or wellbeing, the institute's counselling and wellness support is there for faculty too, and talking to someone you trust can help.",
+  "run_id": "00d747dc"
+ },
+ "trace": {
+  "run_id": "00d747dc",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F101",
+  "role": "faculty",
+  "input": "This delay is making me so anxious I can't sleep. What's the status of CLM-2026-001?",
+  "steps": [
+   {
+    "kind": "tool",
+    "name": "escalate",
+    "args": {
+     "claim_id": "CLM-2026-001",
+     "reason": "claimant distressed - human follow-up"
+    },
+    "out": "escalated to Accounts helpdesk"
+   },
+   {
+    "kind": "tool",
+    "name": "get_claim",
+    "args": {
+     "claim_id": "CLM-2026-001"
+    },
+    "out": "{\"claim_id\": \"CLM-2026-001\", \"faculty_id\": \"F101\", \"grant_id\": \"G-2025-01\", \"purpose\": \"Paper presentation, Indian Finance Conference, Delhi\", \"city\": \"Delhi\", \"depart\": \"2026-08-10\", \"ret\": \"2026-08-13\", \"submitted\": \"2026-08-20\", \"prior_sanction\": true, \"emergency\": false, \"conference_hotel_letter"
+   }
+  ],
+  "events": [
+   "DISTRESS_DETECTED:handoff"
+  ],
+  "retrieved": [],
+  "in_tok": 0,
+  "out_tok": 0,
+  "llm_ms": 0.0,
+  "intent": "distress",
+  "outcome": "HANDOFF",
+  "answer": "I'm sorry this has been so stressful, and a long wait for your own money is a fair thing to be upset about. Current status of CLM-2026-001: Submitted (submitted 2026-08-20). I've asked the Assistant Registrar (Accounts) to contact you personally rather than leaving this to the portal. If the stress is affecting your sleep or wellbeing, the institute's counselling and wellness support is there for faculty too, and talking to someone you trust can help.",
+  "latency_ms": 0.2,
+  "tool_calls": 2,
+  "cost_inr": 0.0
+ }
+}

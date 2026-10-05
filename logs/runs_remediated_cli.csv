@@ -1,0 +1,4 @@
+run_id,ts,mode,user_id,role,input,intent,outcome,latency_ms,tool_calls,in_tok,out_tok,cost_inr,retrieved,events,answer
+630ebcd5,2026-10-01 15:22:07,remediated_cli,F103,faculty,check my claim CLM-2026-003,check_claim,ESCALATE,4.3,2,103,1,0.00096,,,"Claim CLM-2026-003 (₹53,600, rates v2):
+- NEEDS DECISION: R3 Hotel ceiling: ₹9,500/night exceeds ₹7,500 cap, but organiser-designated venue hotel letter attached: excess admissible only with Dean (Research) endorsement [KB-02 §4]
+This needs a human decision before it can move forward."

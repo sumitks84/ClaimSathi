@@ -1,0 +1,79 @@
+{
+ "test": {
+  "id": "T27",
+  "category": "Knowledge",
+  "failure_ref": "F2",
+  "user": "F102",
+  "message": "Does the institute reimburse visa fees?",
+  "expected": "NOT_FOUND",
+  "got": "ANSWER",
+  "outcome_ok": false,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": false,
+  "retrieval_hit": null,
+  "grounded": 1.0,
+  "latency_ms": 5.1,
+  "tool_calls": 1,
+  "in_tok": 376,
+  "out_tok": 59,
+  "cost_inr": 0.00545,
+  "events": "OOV_TERMS:visa",
+  "answer": "Convenience fees of third-party booking platforms are not reimbursed. [KB-01 \u00a73.1] Registration fees for domestic conferences may be reimbursed up to \u20b930,000 per conference, on production of the receipt and proof of attendance. [KB-01 \u00a74]",
+  "run_id": "e2003a1e"
+ },
+ "trace": {
+  "run_id": "e2003a1e",
+  "ts": "2026-10-01 15:25:48",
+  "mode": "baseline",
+  "user_id": "F102",
+  "role": "faculty",
+  "input": "Does the institute reimburse visa fees?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "Does the institute reimburse visa fees?"
+    },
+    "out": "[{\"doc_id\": \"KB-01\", \"section\": \"\\u00a73.1\", \"heading\": \"Mode and class of travel\", \"text\": \"Faculty are entitled to air travel in economy class. Business class is not admissible under any head. Train travel is admissible in AC 2-tier; Professors may travel AC 1st class. Tickets should be booked dir"
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "376 in / 59 out tokens"
+   }
+  ],
+  "events": [
+   "OOV_TERMS:visa"
+  ],
+  "retrieved": [
+   "KB-01 \u00a73.1",
+   "KB-01 \u00a74",
+   "KB-02 \u00a72",
+   "KB-01 \u00a71"
+  ],
+  "in_tok": 376,
+  "out_tok": 59,
+  "llm_ms": 1.3,
+  "scores": [
+   0.53,
+   0.446,
+   0.438,
+   0.38
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "Convenience fees of third-party booking platforms are not reimbursed. [KB-01 \u00a73.1] Registration fees for domestic conferences may be reimbursed up to \u20b930,000 per conference, on production of the receipt and proof of attendance. [KB-01 \u00a74]",
+  "latency_ms": 5.1,
+  "tool_calls": 1,
+  "cost_inr": 0.00545
+ }
+}

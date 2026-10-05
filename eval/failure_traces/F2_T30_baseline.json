@@ -1,0 +1,79 @@
+{
+ "test": {
+  "id": "T30",
+  "category": "Knowledge",
+  "failure_ref": "F2",
+  "user": "F105",
+  "message": "Can I claim mobile phone roaming charges on a foreign trip?",
+  "expected": "NOT_FOUND",
+  "got": "ANSWER",
+  "outcome_ok": false,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": false,
+  "retrieval_hit": null,
+  "grounded": 1.0,
+  "latency_ms": 5.7,
+  "tool_calls": 1,
+  "in_tok": 341,
+  "out_tok": 26,
+  "cost_inr": 0.00398,
+  "events": "OOV_TERMS:mobile,phone,roaming,foreign",
+  "answer": "Travel claims are charged to the Travel head only if sufficient balance remains in that head. [KB-03 \u00a73]",
+  "run_id": "8367044e"
+ },
+ "trace": {
+  "run_id": "8367044e",
+  "ts": "2026-10-01 15:25:48",
+  "mode": "baseline",
+  "user_id": "F105",
+  "role": "faculty",
+  "input": "Can I claim mobile phone roaming charges on a foreign trip?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "Can I claim mobile phone roaming charges on a foreign trip?"
+    },
+    "out": "[{\"doc_id\": \"KB-03\", \"section\": \"\\u00a73\", \"heading\": \"Travel head limit\", \"text\": \"Expenditure under the Travel head may not exceed 40% of the sanctioned grant. Travel claims are charged to the Travel head only if sufficient balance remains in that head.\", \"topic\": \"travel_head\", \"access\": \"faculty"
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "341 in / 26 out tokens"
+   }
+  ],
+  "events": [
+   "OOV_TERMS:mobile,phone,roaming,foreign"
+  ],
+  "retrieved": [
+   "KB-03 \u00a73",
+   "KB-03 \u00a76",
+   "KB-04 \u00a74",
+   "KB-01 \u00a73.2"
+  ],
+  "in_tok": 341,
+  "out_tok": 26,
+  "llm_ms": 1.4,
+  "scores": [
+   0.293,
+   0.27,
+   0.258,
+   0.252
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "Travel claims are charged to the Travel head only if sufficient balance remains in that head. [KB-03 \u00a73]",
+  "latency_ms": 5.7,
+  "tool_calls": 1,
+  "cost_inr": 0.00398
+ }
+}

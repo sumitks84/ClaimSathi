@@ -1,0 +1,77 @@
+{
+ "test": {
+  "id": "T31",
+  "category": "Knowledge",
+  "failure_ref": "F3",
+  "user": "F106",
+  "message": "What is the maximum conference registration fee I can claim?",
+  "expected": "ESCALATE",
+  "got": "ANSWER",
+  "outcome_ok": false,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": false,
+  "retrieval_hit": true,
+  "grounded": 1.0,
+  "latency_ms": 5.3,
+  "tool_calls": 1,
+  "in_tok": 327,
+  "out_tok": 55,
+  "cost_inr": 0.00487,
+  "events": "",
+  "answer": "Conference claims need the registration receipt and certificate of attendance or presentation. [KB-04 \u00a73] Registration fees for domestic conferences may be charged to the seed grant up to \u20b940,000 per conference. [KB-03 \u00a75]",
+  "run_id": "22616d7d"
+ },
+ "trace": {
+  "run_id": "22616d7d",
+  "ts": "2026-10-01 15:25:48",
+  "mode": "baseline",
+  "user_id": "F106",
+  "role": "faculty",
+  "input": "What is the maximum conference registration fee I can claim?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "What is the maximum conference registration fee I can claim?"
+    },
+    "out": "[{\"doc_id\": \"KB-03\", \"section\": \"\\u00a75\", \"heading\": \"Conference registration\", \"text\": \"Registration fees for domestic conferences may be charged to the seed grant up to \\u20b940,000 per conference.\", \"topic\": \"registration_cap\", \"access\": \"faculty\", \"title\": \"Faculty Seed Grant Guidelines 2025\", "
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "327 in / 55 out tokens"
+   }
+  ],
+  "events": [],
+  "retrieved": [
+   "KB-03 \u00a75",
+   "KB-01 \u00a74",
+   "KB-04 \u00a73",
+   "KB-04 \u00a74"
+  ],
+  "in_tok": 327,
+  "out_tok": 55,
+  "llm_ms": 1.2,
+  "scores": [
+   0.638,
+   0.636,
+   0.485,
+   0.409
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "Conference claims need the registration receipt and certificate of attendance or presentation. [KB-04 \u00a73] Registration fees for domestic conferences may be charged to the seed grant up to \u20b940,000 per conference. [KB-03 \u00a75]",
+  "latency_ms": 5.3,
+  "tool_calls": 1,
+  "cost_inr": 0.00487
+ }
+}

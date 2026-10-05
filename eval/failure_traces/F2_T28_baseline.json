@@ -1,0 +1,79 @@
+{
+ "test": {
+  "id": "T28",
+  "category": "Knowledge",
+  "failure_ref": "F2",
+  "user": "F103",
+  "message": "Can I defer my seed grant by a year?",
+  "expected": "NOT_FOUND",
+  "got": "ANSWER",
+  "outcome_ok": false,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": false,
+  "retrieval_hit": null,
+  "grounded": 1.0,
+  "latency_ms": 4.8,
+  "tool_calls": 1,
+  "in_tok": 277,
+  "out_tok": 17,
+  "cost_inr": 0.00309,
+  "events": "OOV_TERMS:defer",
+  "answer": "A seed grant of up to \u20b93,00,000 is sanctioned for two years. [KB-03 \u00a71]",
+  "run_id": "78fa9bf6"
+ },
+ "trace": {
+  "run_id": "78fa9bf6",
+  "ts": "2026-10-01 15:25:48",
+  "mode": "baseline",
+  "user_id": "F103",
+  "role": "faculty",
+  "input": "Can I defer my seed grant by a year?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "Can I defer my seed grant by a year?"
+    },
+    "out": "[{\"doc_id\": \"KB-03\", \"section\": \"\\u00a71\", \"heading\": \"Purpose\", \"text\": \"Seed grants support early-stage research by faculty members. A seed grant of up to \\u20b93,00,000 is sanctioned for two years.\", \"topic\": null, \"access\": \"faculty\", \"title\": \"Faculty Seed Grant Guidelines 2025\", \"version\": \"3."
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "277 in / 17 out tokens"
+   }
+  ],
+  "events": [
+   "OOV_TERMS:defer"
+  ],
+  "retrieved": [
+   "KB-03 \u00a71",
+   "KB-03 \u00a76",
+   "KB-03 \u00a77",
+   "KB-03 \u00a75"
+  ],
+  "in_tok": 277,
+  "out_tok": 17,
+  "llm_ms": 1.2,
+  "scores": [
+   0.64,
+   0.525,
+   0.517,
+   0.386
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "A seed grant of up to \u20b93,00,000 is sanctioned for two years. [KB-03 \u00a71]",
+  "latency_ms": 4.8,
+  "tool_calls": 1,
+  "cost_inr": 0.00309
+ }
+}

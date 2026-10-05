@@ -1,0 +1,26 @@
+digraph G {
+ rankdir=TB; fontname="Helvetica"; node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#F4F1EA", color="#5B5B5B"];
+ edge [fontname="Helvetica", fontsize=9, color="#555555"];
+ start [label="Message in\n(user_id + role from login)", shape=oval, fillcolor="#DDE7F0"];
+ guard [label="INPUT GUARD\nPII mask · injection · off-topic · distress", fillcolor="#F6DADA"];
+ router [label="ROUTER (rules, no LLM)\nintent + claim ID"];
+ policy [label="RETRIEVE\nversion filter · ACL · hybrid BM25+trigram\nrelevance + OOV gate · conflict check"];
+ gen [label="LLM DRAFT (large model)\nanswer only from context, cite §"];
+ claim [label="TOOLS: get_claim (ACL)\n→ check_claim (rule engine)"];
+ doc [label="DOC GUARD\nstrip instructions from bills"];
+ note [label="LLM PHRASING\n(cannot change decision)"];
+ out [label="OUTPUT GUARD\ngrounding · citation · commitment filter", fillcolor="#F6DADA"];
+ saga [label="SUBMIT SAGA\ndraft → ticket (idempotent) → status → notify\nrollback + alert on failure"];
+ human [label="HUMAN: Accounts Officer / Dean (R) / Director\napprove · reject · condone", shape=box, fillcolor="#E3EED9", style="filled,bold"];
+ handoff [label="HANDOFF\nAsst. Registrar (Accounts)\n+ wellness pointer", fillcolor="#E3EED9"];
+ esc [label="ESCALATE\nconflict / not found / exception", fillcolor="#E3EED9"];
+ refuse [label="REFUSE / BLOCK", fillcolor="#EEEEEE"];
+ endn [label="END\nlog trace (JSONL + CSV)", shape=oval, fillcolor="#DDE7F0"];
+ start -> guard; guard -> refuse [label="injection / off-topic"]; guard -> handoff [label="distress"]; guard -> router [label="ok"];
+ router -> policy [label="policy_q"]; router -> claim [label="check / submit"]; router -> refuse [label="approve / bulk / other's record"];
+ policy -> esc [label="no relevant doc\nor conflict"]; policy -> gen [label="relevant"]; gen -> out;
+ claim -> doc -> note -> out; claim -> refuse [label="ACL denied\nor loop/budget stop"];
+ out -> endn [label="answer / check result"]; out -> saga [label="submit &\nnot RETURN"];
+ saga -> human [label="PENDING_HUMAN"]; saga -> esc [label="FAILED_SAFE"];
+ human -> endn; handoff -> endn; esc -> endn; refuse -> endn;
+}

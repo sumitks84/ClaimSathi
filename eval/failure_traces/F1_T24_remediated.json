@@ -1,0 +1,79 @@
+{
+ "test": {
+  "id": "T24",
+  "category": "Knowledge",
+  "failure_ref": "F1",
+  "user": "F105",
+  "message": "The claim submission deadline is 60 days, right?",
+  "expected": "ANSWER",
+  "got": "ANSWER",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": true,
+  "grounded": 1.0,
+  "latency_ms": 4.4,
+  "tool_calls": 1,
+  "in_tok": 323,
+  "out_tok": 62,
+  "cost_inr": 0.00508,
+  "events": "VERSION_FILTER:3 superseded sections excluded",
+  "answer": "TA/DA claims must be submitted within 30 days of return to headquarters. [KB-02 \u00a75] Claims are submitted on the claims portal with scanned bills, and original bills are deposited with the Accounts Section within 7 days of online submission. [KB-04 \u00a71]",
+  "run_id": "26e8e666"
+ },
+ "trace": {
+  "run_id": "26e8e666",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F105",
+  "role": "faculty",
+  "input": "The claim submission deadline is 60 days, right?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "The claim submission deadline is 60 days, right?"
+    },
+    "out": "[{\"doc_id\": \"KB-02\", \"section\": \"\\u00a75\", \"heading\": \"Revised submission deadline\", \"text\": \"TA/DA claims must be submitted within 30 days of return to headquarters. Claims received later require condonation of delay by the Director.\", \"topic\": \"deadline\", \"access\": \"faculty\", \"title\": \"Circular AC"
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "323 in / 62 out tokens"
+   }
+  ],
+  "events": [
+   "VERSION_FILTER:3 superseded sections excluded"
+  ],
+  "retrieved": [
+   "KB-02 \u00a75",
+   "KB-04 \u00a71",
+   "KB-04 \u00a75",
+   "KB-04 \u00a72"
+  ],
+  "in_tok": 323,
+  "out_tok": 62,
+  "llm_ms": 1.3,
+  "scores": [
+   0.676,
+   0.544,
+   0.412,
+   0.348
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "TA/DA claims must be submitted within 30 days of return to headquarters. [KB-02 \u00a75] Claims are submitted on the claims portal with scanned bills, and original bills are deposited with the Accounts Section within 7 days of online submission. [KB-04 \u00a71]",
+  "latency_ms": 4.4,
+  "tool_calls": 1,
+  "cost_inr": 0.00508
+ }
+}

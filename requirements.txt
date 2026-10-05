@@ -1,0 +1,2 @@
+# Core agent, guardrails, retrieval and evaluation use only the Python standard library (3.10+).
+streamlit>=1.35   # optional chat UI

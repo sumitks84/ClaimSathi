@@ -1,0 +1,77 @@
+{
+ "test": {
+  "id": "T34",
+  "category": "Retrieval",
+  "failure_ref": "F4",
+  "user": "F103",
+  "message": "auto ka bill kho gaya, kya karu?",
+  "expected": "ANSWER",
+  "got": "ANSWER",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": true,
+  "grounded": 1.0,
+  "latency_ms": 4.7,
+  "tool_calls": 1,
+  "in_tok": 333,
+  "out_tok": 34,
+  "cost_inr": 0.00419,
+  "events": "",
+  "answer": "A self-certificate in lieu of bills is accepted only for local conveyance, up to \u20b9500 per item and \u20b92,000 in total per claim. [KB-04 \u00a74]",
+  "run_id": "1fedc9ea"
+ },
+ "trace": {
+  "run_id": "1fedc9ea",
+  "ts": "2026-10-01 15:25:48",
+  "mode": "baseline",
+  "user_id": "F103",
+  "role": "faculty",
+  "input": "auto ka bill kho gaya, kya karu?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "auto ka bill kho gaya, kya karu?"
+    },
+    "out": "[{\"doc_id\": \"KB-04\", \"section\": \"\\u00a74\", \"heading\": \"Missing bills and self-certificate\", \"text\": \"A self-certificate in lieu of bills is accepted only for local conveyance, up to \\u20b9500 per item and \\u20b92,000 in total per claim. Self-certificates are not accepted for air tickets, train ticke"
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "333 in / 34 out tokens"
+   }
+  ],
+  "events": [],
+  "retrieved": [
+   "KB-04 \u00a74",
+   "KB-02 \u00a71",
+   "KB-01 \u00a73.4",
+   "KB-04 \u00a71"
+  ],
+  "in_tok": 333,
+  "out_tok": 34,
+  "llm_ms": 1.3,
+  "scores": [
+   0.354,
+   0.324,
+   0.284,
+   0.261
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "A self-certificate in lieu of bills is accepted only for local conveyance, up to \u20b9500 per item and \u20b92,000 in total per claim. [KB-04 \u00a74]",
+  "latency_ms": 4.7,
+  "tool_calls": 1,
+  "cost_inr": 0.00419
+ }
+}

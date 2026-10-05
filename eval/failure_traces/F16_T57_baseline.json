@@ -1,0 +1,74 @@
+{
+ "test": {
+  "id": "T57",
+  "category": "Reasoning",
+  "failure_ref": "F16",
+  "user": "F106",
+  "message": "Check my claim CLM-2026-006",
+  "expected": "RETURN_FOR_CORRECTION",
+  "got": "RETURN_FOR_CORRECTION",
+  "outcome_ok": true,
+  "contains_ok": false,
+  "not_contains_ok": true,
+  "success": false,
+  "retrieval_hit": null,
+  "grounded": "",
+  "latency_ms": 1.1,
+  "tool_calls": 2,
+  "in_tok": 118,
+  "out_tok": 1,
+  "cost_inr": 0.0011,
+  "events": "",
+  "answer": "Claim CLM-2026-006 (\u20b940,100, rates v1):\n- PROBLEM: R3 Hotel ceiling: \u20b96,500/night exceeds \u20b96,000 cap for Kolkata (X-class); admissible \u20b912,000 [KB-01 \u00a73.2]\n- PROBLEM: R4 Daily allowance: Claimed \u20b93,600; entitled \u20b93,000 (3 days \u00d7 \u20b91,000) [KB-01 \u00a73.3]\nThis claim would be returned in its current form. Fix the items above and resubmit.",
+  "run_id": "49d88e56"
+ },
+ "trace": {
+  "run_id": "49d88e56",
+  "ts": "2026-10-01 15:25:48",
+  "mode": "baseline",
+  "user_id": "F106",
+  "role": "faculty",
+  "input": "Check my claim CLM-2026-006",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "check_claim"
+   },
+   {
+    "kind": "tool",
+    "name": "get_claim",
+    "args": {
+     "claim_id": "CLM-2026-006"
+    },
+    "out": "{\"claim_id\": \"CLM-2026-006\", \"faculty_id\": \"F106\", \"grant_id\": \"G-2025-06\", \"purpose\": \"HR analytics conference, Kolkata\", \"city\": \"Kolkata\", \"depart\": \"2026-08-25\", \"ret\": \"2026-08-27\", \"submitted\": \"2026-09-02\", \"prior_sanction\": true, \"emergency\": false, \"conference_hotel_letter\": false, \"free_me"
+   },
+   {
+    "kind": "tool",
+    "name": "check_claim",
+    "args": {
+     "claim_id": "CLM-2026-006"
+    },
+    "out": "{\"claim_id\": \"CLM-2026-006\", \"rate_version\": \"v1\", \"total\": 40100, \"findings\": [{\"rule\": \"R1 Travel sanction\", \"status\": \"pass\", \"detail\": \"Form TA-1 sanction on record\", \"ref\": \"KB-01 \\u00a72\"}, {\"rule\": \"R2 Class of travel\", \"status\": \"pass\", \"detail\": \"Air economy class\", \"ref\": \"KB-01 \\u00a73.1\""
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "118 in / 1 out tokens"
+   }
+  ],
+  "events": [],
+  "retrieved": [],
+  "in_tok": 118,
+  "out_tok": 1,
+  "llm_ms": 1.0,
+  "intent": "check_claim",
+  "outcome": "RETURN_FOR_CORRECTION",
+  "answer": "Claim CLM-2026-006 (\u20b940,100, rates v1):\n- PROBLEM: R3 Hotel ceiling: \u20b96,500/night exceeds \u20b96,000 cap for Kolkata (X-class); admissible \u20b912,000 [KB-01 \u00a73.2]\n- PROBLEM: R4 Daily allowance: Claimed \u20b93,600; entitled \u20b93,000 (3 days \u00d7 \u20b91,000) [KB-01 \u00a73.3]\nThis claim would be returned in its current form. Fix the items above and resubmit.",
+  "latency_ms": 1.1,
+  "tool_calls": 2,
+  "cost_inr": 0.0011
+ }
+}

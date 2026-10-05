@@ -1,0 +1,77 @@
+{
+ "test": {
+  "id": "T32",
+  "category": "Retrieval",
+  "failure_ref": "F4",
+  "user": "F101",
+  "message": "Delhi mein hotel ka max kitna milega?",
+  "expected": "ANSWER",
+  "got": "ANSWER",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": true,
+  "grounded": 1.0,
+  "latency_ms": 5.1,
+  "tool_calls": 1,
+  "in_tok": 353,
+  "out_tok": 49,
+  "cost_inr": 0.00489,
+  "events": "",
+  "answer": "With effect from 1 April 2026, hotel charges are reimbursed on actuals up to \u20b97,500 per night in X-class cities, \u20b95,000 per night in Y-class cities and \u20b93,500 per night in Z-class cities. [KB-02 \u00a72]",
+  "run_id": "419654bf"
+ },
+ "trace": {
+  "run_id": "419654bf",
+  "ts": "2026-10-01 15:25:48",
+  "mode": "baseline",
+  "user_id": "F101",
+  "role": "faculty",
+  "input": "Delhi mein hotel ka max kitna milega?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "Delhi mein hotel ka max kitna milega?"
+    },
+    "out": "[{\"doc_id\": \"KB-02\", \"section\": \"\\u00a72\", \"heading\": \"Revised hotel ceiling\", \"text\": \"With effect from 1 April 2026, hotel charges are reimbursed on actuals up to \\u20b97,500 per night in X-class cities, \\u20b95,000 per night in Y-class cities and \\u20b93,500 per night in Z-class cities. The hotel"
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "353 in / 49 out tokens"
+   }
+  ],
+  "events": [],
+  "retrieved": [
+   "KB-02 \u00a72",
+   "KB-01 \u00a73.2",
+   "KB-06 \u00a72",
+   "KB-05 \u00a72"
+  ],
+  "in_tok": 353,
+  "out_tok": 49,
+  "llm_ms": 1.3,
+  "scores": [
+   0.455,
+   0.451,
+   0.384,
+   0.355
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "With effect from 1 April 2026, hotel charges are reimbursed on actuals up to \u20b97,500 per night in X-class cities, \u20b95,000 per night in Y-class cities and \u20b93,500 per night in Z-class cities. [KB-02 \u00a72]",
+  "latency_ms": 5.1,
+  "tool_calls": 1,
+  "cost_inr": 0.00489
+ }
+}

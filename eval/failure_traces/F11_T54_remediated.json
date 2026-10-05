@@ -1,0 +1,74 @@
+{
+ "test": {
+  "id": "T54",
+  "category": "Reasoning",
+  "failure_ref": "F11",
+  "user": "F103",
+  "message": "Check my claim CLM-2026-003",
+  "expected": "ESCALATE",
+  "got": "ESCALATE",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": null,
+  "grounded": "",
+  "latency_ms": 1.2,
+  "tool_calls": 2,
+  "in_tok": 103,
+  "out_tok": 1,
+  "cost_inr": 0.00096,
+  "events": "",
+  "answer": "Claim CLM-2026-003 (\u20b953,600, rates v2):\n- NEEDS DECISION: R3 Hotel ceiling: \u20b99,500/night exceeds \u20b97,500 cap, but organiser-designated venue hotel letter attached: excess admissible only with Dean (Research) endorsement [KB-02 \u00a74]\nThis needs a human decision before it can move forward.",
+  "run_id": "8918e3f9"
+ },
+ "trace": {
+  "run_id": "8918e3f9",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F103",
+  "role": "faculty",
+  "input": "Check my claim CLM-2026-003",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "check_claim"
+   },
+   {
+    "kind": "tool",
+    "name": "get_claim",
+    "args": {
+     "claim_id": "CLM-2026-003"
+    },
+    "out": "{\"claim_id\": \"CLM-2026-003\", \"faculty_id\": \"F103\", \"grant_id\": \"G-2025-03\", \"purpose\": \"POMS India conference, Mumbai\", \"city\": \"Mumbai\", \"depart\": \"2026-08-18\", \"ret\": \"2026-08-20\", \"submitted\": \"2026-08-25\", \"prior_sanction\": true, \"emergency\": false, \"conference_hotel_letter\": true, \"free_meals\":"
+   },
+   {
+    "kind": "tool",
+    "name": "check_claim",
+    "args": {
+     "claim_id": "CLM-2026-003"
+    },
+    "out": "{\"claim_id\": \"CLM-2026-003\", \"rate_version\": \"v2\", \"total\": 53600, \"findings\": [{\"rule\": \"R1 Travel sanction\", \"status\": \"pass\", \"detail\": \"Form TA-1 sanction on record\", \"ref\": \"KB-01 \\u00a72\"}, {\"rule\": \"R2 Class of travel\", \"status\": \"pass\", \"detail\": \"Air economy class\", \"ref\": \"KB-01 \\u00a73.1\""
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "103 in / 1 out tokens"
+   }
+  ],
+  "events": [],
+  "retrieved": [],
+  "in_tok": 103,
+  "out_tok": 1,
+  "llm_ms": 1.0,
+  "intent": "check_claim",
+  "outcome": "ESCALATE",
+  "answer": "Claim CLM-2026-003 (\u20b953,600, rates v2):\n- NEEDS DECISION: R3 Hotel ceiling: \u20b99,500/night exceeds \u20b97,500 cap, but organiser-designated venue hotel letter attached: excess admissible only with Dean (Research) endorsement [KB-02 \u00a74]\nThis needs a human decision before it can move forward.",
+  "latency_ms": 1.2,
+  "tool_calls": 2,
+  "cost_inr": 0.00096
+ }
+}

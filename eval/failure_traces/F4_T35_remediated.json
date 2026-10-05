@@ -1,0 +1,79 @@
+{
+ "test": {
+  "id": "T35",
+  "category": "Retrieval",
+  "failure_ref": "F4",
+  "user": "F104",
+  "message": "khana free tha conference mein, DA kitna milega?",
+  "expected": "ANSWER",
+  "got": "ANSWER",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": true,
+  "grounded": 1.0,
+  "latency_ms": 6.0,
+  "tool_calls": 1,
+  "in_tok": 389,
+  "out_tok": 26,
+  "cost_inr": 0.00441,
+  "events": "VERSION_FILTER:3 superseded sections excluded",
+  "answer": "Where the conference or host provides free meals, DA is admissible at 50%, that is \u20b9600 per day. [KB-02 \u00a73]",
+  "run_id": "88dee89e"
+ },
+ "trace": {
+  "run_id": "88dee89e",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F104",
+  "role": "faculty",
+  "input": "khana free tha conference mein, DA kitna milega?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "khana free tha conference mein, DA kitna milega?"
+    },
+    "out": "[{\"doc_id\": \"KB-02\", \"section\": \"\\u00a73\", \"heading\": \"Revised daily allowance\", \"text\": \"Daily allowance is revised to \\u20b91,200 per day of absence from headquarters. Where the conference or host provides free meals, DA is admissible at 50%, that is \\u20b9600 per day.\", \"topic\": \"da_rate\", \"acces"
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "389 in / 26 out tokens"
+   }
+  ],
+  "events": [
+   "VERSION_FILTER:3 superseded sections excluded"
+  ],
+  "retrieved": [
+   "KB-02 \u00a73",
+   "KB-01 \u00a74",
+   "KB-02 \u00a72",
+   "KB-02 \u00a74"
+  ],
+  "in_tok": 389,
+  "out_tok": 26,
+  "llm_ms": 1.4,
+  "scores": [
+   0.726,
+   0.454,
+   0.413,
+   0.408
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "Where the conference or host provides free meals, DA is admissible at 50%, that is \u20b9600 per day. [KB-02 \u00a73]",
+  "latency_ms": 6.0,
+  "tool_calls": 1,
+  "cost_inr": 0.00441
+ }
+}

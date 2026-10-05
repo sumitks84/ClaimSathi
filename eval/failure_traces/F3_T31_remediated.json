@@ -1,0 +1,83 @@
+{
+ "test": {
+  "id": "T31",
+  "category": "Knowledge",
+  "failure_ref": "F3",
+  "user": "F106",
+  "message": "What is the maximum conference registration fee I can claim?",
+  "expected": "ESCALATE",
+  "got": "ESCALATE",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": true,
+  "grounded": "",
+  "latency_ms": 4.4,
+  "tool_calls": 2,
+  "in_tok": 0,
+  "out_tok": 0,
+  "cost_inr": 0.0,
+  "events": "VERSION_FILTER:3 superseded sections excluded;CONFLICT:KB-03 \u00a75 vs KB-01 \u00a74 on registration_cap",
+  "answer": "The documents disagree on this. Faculty Seed Grant Guidelines 2025 says: \"Registration fees for domestic conferences may be charged to the seed grant up to \u20b940,000 per conference.\" [KB-03 \u00a75]. TA/DA Rules for Faculty (Handbook) says: \"Registration fees for domestic conferences may be reimbursed up to \u20b930,000 per conference, on production of the receipt and proof of attendance.\" [KB-01 \u00a74]. I've flagged the conflict to the Accounts Section; until they confirm, plan on the lower figure.",
+  "run_id": "3e270acb"
+ },
+ "trace": {
+  "run_id": "3e270acb",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F106",
+  "role": "faculty",
+  "input": "What is the maximum conference registration fee I can claim?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "What is the maximum conference registration fee I can claim?"
+    },
+    "out": "[{\"doc_id\": \"KB-03\", \"section\": \"\\u00a75\", \"heading\": \"Conference registration\", \"text\": \"Registration fees for domestic conferences may be charged to the seed grant up to \\u20b940,000 per conference.\", \"topic\": \"registration_cap\", \"access\": \"faculty\", \"title\": \"Faculty Seed Grant Guidelines 2025\", "
+   },
+   {
+    "kind": "tool",
+    "name": "escalate",
+    "args": {
+     "claim_id": "N/A",
+     "reason": "CONFLICT:KB-03 \u00a75 vs KB-01 \u00a74 on registration_cap"
+    },
+    "out": "escalated to Accounts helpdesk"
+   }
+  ],
+  "events": [
+   "VERSION_FILTER:3 superseded sections excluded",
+   "CONFLICT:KB-03 \u00a75 vs KB-01 \u00a74 on registration_cap"
+  ],
+  "retrieved": [
+   "KB-03 \u00a75",
+   "KB-01 \u00a74",
+   "KB-04 \u00a74",
+   "KB-04 \u00a73"
+  ],
+  "in_tok": 0,
+  "out_tok": 0,
+  "llm_ms": 0.0,
+  "scores": [
+   0.676,
+   0.674,
+   0.485,
+   0.471
+  ],
+  "intent": "policy_q",
+  "outcome": "ESCALATE",
+  "answer": "The documents disagree on this. Faculty Seed Grant Guidelines 2025 says: \"Registration fees for domestic conferences may be charged to the seed grant up to \u20b940,000 per conference.\" [KB-03 \u00a75]. TA/DA Rules for Faculty (Handbook) says: \"Registration fees for domestic conferences may be reimbursed up to \u20b930,000 per conference, on production of the receipt and proof of attendance.\" [KB-01 \u00a74]. I've flagged the conflict to the Accounts Section; until they confirm, plan on the lower figure.",
+  "latency_ms": 4.4,
+  "tool_calls": 2,
+  "cost_inr": 0.0
+ }
+}

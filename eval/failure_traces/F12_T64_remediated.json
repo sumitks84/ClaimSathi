@@ -1,0 +1,70 @@
+{
+ "test": {
+  "id": "T64",
+  "category": "Reasoning",
+  "failure_ref": "F12",
+  "user": "F101",
+  "message": "Check my claim CLM-2026-099",
+  "expected": "NOT_FOUND",
+  "got": "NOT_FOUND",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": null,
+  "grounded": "",
+  "latency_ms": 0.1,
+  "tool_calls": 2,
+  "in_tok": 0,
+  "out_tok": 0,
+  "cost_inr": 0.0,
+  "events": "LOOP_STOPPED:get_claim",
+  "answer": "I couldn't complete this (loop detected: identical call repeated). I've stopped rather than keep retrying; please check the claim ID or contact the Accounts helpdesk.",
+  "run_id": "208a9111"
+ },
+ "trace": {
+  "run_id": "208a9111",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F101",
+  "role": "faculty",
+  "input": "Check my claim CLM-2026-099",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "check_claim"
+   },
+   {
+    "kind": "tool",
+    "name": "get_claim",
+    "args": {
+     "claim_id": "CLM-2026-099"
+    },
+    "out": "null"
+   },
+   {
+    "kind": "tool",
+    "name": "get_claim",
+    "args": {
+     "claim_id": "CLM-2026-099"
+    },
+    "out": "null"
+   }
+  ],
+  "events": [
+   "LOOP_STOPPED:get_claim"
+  ],
+  "retrieved": [],
+  "in_tok": 0,
+  "out_tok": 0,
+  "llm_ms": 0.0,
+  "intent": "check_claim",
+  "outcome": "NOT_FOUND",
+  "answer": "I couldn't complete this (loop detected: identical call repeated). I've stopped rather than keep retrying; please check the claim ID or contact the Accounts helpdesk.",
+  "latency_ms": 0.1,
+  "tool_calls": 2,
+  "cost_inr": 0.0
+ }
+}

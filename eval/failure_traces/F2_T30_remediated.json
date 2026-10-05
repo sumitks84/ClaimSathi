@@ -1,0 +1,83 @@
+{
+ "test": {
+  "id": "T30",
+  "category": "Knowledge",
+  "failure_ref": "F2",
+  "user": "F105",
+  "message": "Can I claim mobile phone roaming charges on a foreign trip?",
+  "expected": "NOT_FOUND",
+  "got": "NOT_FOUND",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": null,
+  "grounded": "",
+  "latency_ms": 3.6,
+  "tool_calls": 2,
+  "in_tok": 0,
+  "out_tok": 0,
+  "cost_inr": 0.0,
+  "events": "OOV_TERMS:mobile,phone,roaming,foreign;VERSION_FILTER:3 superseded sections excluded",
+  "answer": "I couldn't find this in the TA/DA rules, the seed-grant guidelines or the claims SOP. I won't guess on money matters, so I've logged your question for the Accounts Section to answer.",
+  "run_id": "6cc7127a"
+ },
+ "trace": {
+  "run_id": "6cc7127a",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F105",
+  "role": "faculty",
+  "input": "Can I claim mobile phone roaming charges on a foreign trip?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "Can I claim mobile phone roaming charges on a foreign trip?"
+    },
+    "out": "[{\"doc_id\": \"KB-03\", \"section\": \"\\u00a73\", \"heading\": \"Travel head limit\", \"text\": \"Expenditure under the Travel head may not exceed 40% of the sanctioned grant. Travel claims are charged to the Travel head only if sufficient balance remains in that head.\", \"topic\": \"travel_head\", \"access\": \"faculty"
+   },
+   {
+    "kind": "tool",
+    "name": "escalate",
+    "args": {
+     "claim_id": "N/A",
+     "reason": "unanswered policy question"
+    },
+    "out": "escalated to Accounts helpdesk"
+   }
+  ],
+  "events": [
+   "OOV_TERMS:mobile,phone,roaming,foreign",
+   "VERSION_FILTER:3 superseded sections excluded"
+  ],
+  "retrieved": [
+   "KB-03 \u00a73",
+   "KB-01 \u00a72",
+   "KB-03 \u00a76",
+   "KB-01 \u00a73.1"
+  ],
+  "in_tok": 0,
+  "out_tok": 0,
+  "llm_ms": 0.0,
+  "scores": [
+   0.443,
+   0.339,
+   0.334,
+   0.327
+  ],
+  "intent": "policy_q",
+  "outcome": "NOT_FOUND",
+  "answer": "I couldn't find this in the TA/DA rules, the seed-grant guidelines or the claims SOP. I won't guess on money matters, so I've logged your question for the Accounts Section to answer.",
+  "latency_ms": 3.6,
+  "tool_calls": 2,
+  "cost_inr": 0.0
+ }
+}

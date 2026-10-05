@@ -1,0 +1,79 @@
+{
+ "test": {
+  "id": "T25",
+  "category": "Knowledge",
+  "failure_ref": "F1",
+  "user": "F106",
+  "message": "What is the daily allowance rate?",
+  "expected": "ANSWER",
+  "got": "ANSWER",
+  "outcome_ok": true,
+  "contains_ok": true,
+  "not_contains_ok": true,
+  "success": true,
+  "retrieval_hit": true,
+  "grounded": 1.0,
+  "latency_ms": 3.9,
+  "tool_calls": 1,
+  "in_tok": 189,
+  "out_tok": 21,
+  "cost_inr": 0.00244,
+  "events": "VERSION_FILTER:3 superseded sections excluded",
+  "answer": "Daily allowance is revised to \u20b91,200 per day of absence from headquarters. [KB-02 \u00a73]",
+  "run_id": "44ff3e6b"
+ },
+ "trace": {
+  "run_id": "44ff3e6b",
+  "ts": "2026-10-01 15:25:49",
+  "mode": "remediated",
+  "user_id": "F106",
+  "role": "faculty",
+  "input": "What is the daily allowance rate?",
+  "steps": [
+   {
+    "kind": "router",
+    "name": "deterministic",
+    "args": {},
+    "out": "policy_q"
+   },
+   {
+    "kind": "tool",
+    "name": "search_policy",
+    "args": {
+     "query": "What is the daily allowance rate?"
+    },
+    "out": "[{\"doc_id\": \"KB-02\", \"section\": \"\\u00a73\", \"heading\": \"Revised daily allowance\", \"text\": \"Daily allowance is revised to \\u20b91,200 per day of absence from headquarters. Where the conference or host provides free meals, DA is admissible at 50%, that is \\u20b9600 per day.\", \"topic\": \"da_rate\", \"acces"
+   },
+   {
+    "kind": "llm",
+    "name": "llama-3.3-70b-versatile",
+    "args": {},
+    "out": "189 in / 21 out tokens"
+   }
+  ],
+  "events": [
+   "VERSION_FILTER:3 superseded sections excluded"
+  ],
+  "retrieved": [
+   "KB-02 \u00a73",
+   "KB-02 \u00a74",
+   "KB-02 \u00a72",
+   "KB-02 \u00a75"
+  ],
+  "in_tok": 189,
+  "out_tok": 21,
+  "llm_ms": 1.1,
+  "scores": [
+   0.831,
+   0.283,
+   0.223,
+   0.218
+  ],
+  "intent": "policy_q",
+  "outcome": "ANSWER",
+  "answer": "Daily allowance is revised to \u20b91,200 per day of absence from headquarters. [KB-02 \u00a73]",
+  "latency_ms": 3.9,
+  "tool_calls": 1,
+  "cost_inr": 0.00244
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "baseline": {
+  "cases": 68,
+  "task_success": 0.397,
+  "retrieval_hit_rate": 0.97,
+  "retrieval_cases": 33,
+  "faithfulness": 0.95,
+  "answer_cases": 50,
+  "p95_latency_ms": 5.7,
+  "avg_tool_calls": 2.28,
+  "total_cost_inr": 0.2126,
+  "human_route_rate": 0.015,
+  "by_category": {
+   "Policy": "17/22",
+   "Knowledge": "0/9",
+   "Retrieval": "4/6",
+   "Scope": "0/2",
+   "Security": "0/5",
+   "Privacy": "3/7",
+   "Reasoning": "3/8",
+   "Action": "0/5",
+   "Fairness": "0/2",
+   "Tone": "0/2"
+  },
+  "special": {
+   "F8_live_tickets_for_CLM_011": 2,
+   "F8_pass": false,
+   "F13_priority_008_vs_009": "P3 vs P1",
+   "F13_pass": false,
+   "F12_tool_calls_T64": 50
+  },
+  "load_test_F15": {
+   "queries": 200,
+   "succeeded": 140,
+   "failed_429": 60,
+   "llm_calls": 200,
+   "p95_latency_s": 2.5,
+   "cache_or_rule_answers": 0
+  }
+ },
+ "remediated": {
+  "cases": 68,
+  "task_success": 1.0,
+  "retrieval_hit_rate": 1.0,
+  "retrieval_cases": 33,
+  "faithfulness": 1.0,
+  "answer_cases": 33,
+  "p95_latency_ms": 5.3,
+  "avg_tool_calls": 1.51,
+  "total_cost_inr": 0.1625,
+  "human_route_rate": 0.25,
+  "by_category": {
+   "Policy": "22/22",
+   "Knowledge": "9/9",
+   "Retrieval": "6/6",
+   "Scope": "2/2",
+   "Security": "5/5",
+   "Privacy": "7/7",
+   "Reasoning": "8/8",
+   "Action": "5/5",
+   "Fairness": "2/2",
+   "Tone": "2/2"
+  },
+  "special": {
+   "F8_live_tickets_for_CLM_011": 1,
+   "F8_pass": true,
+   "F13_priority_008_vs_009": "P1 vs P1",
+   "F13_pass": true,
+   "F12_tool_calls_T64": 2
+  },
+  "load_test_F15": {
+   "queries": 200,
+   "succeeded": 200,
+   "failed_429": 0,
+   "llm_calls": 25,
+   "p95_latency_s": 2.5,
+   "cache_or_rule_answers": 175
+  }
+ }
+}
